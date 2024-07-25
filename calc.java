@@ -1,63 +1,52 @@
-import java.util.*;
-public class calc {
-    public static void main(String[] args) {
-        
-        while (true) {
-            Scanner ssc = new Scanner(System.in);
-        System.out.println("which calculation(a,s,m,d)");
-        String task = ssc.nextLine();
+import java.util.Scanner;
 
-        if (task.equals('a')) {
-            addition();
-        } else if (task.equals('s')) {
-            subtraction();
-        } else if (task.equals('m')) {
-            multiplication();
-        } else if (task.equals('d')) {
-            division();
-        }
-        }
+public class calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print("enter first no :");
+        int a = sc.nextInt();
+        System.out.print("enter second no :");
+        int b = sc.nextInt();
+
+        System.out.println("which calculation (a,s,m,d)");
+        String task = sc.next();
+        sc.close();
         
+        if (task.equals("a")) {
+            int addition = calcaddition(a, b);
+            System.out.println("answer is:"+ addition);
+        } 
+        else if (task.equals("s")) {
+            int subtraction = calcsubtract(a, b);
+        System.out.println("anser is : "+ subtraction);
+        }
+         else if (task.equals("m")) {
+            int multiplication = calcmultiply(a,b);
+        System.out.println("answer is:"+multiplication);
+        } 
+        else if (task.equals("d")) {
+            int division = calcdivide(a,b);
+        System.out.print("answer is :"+ division);
+        }
     }
-    public static int addition(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter no1");
-        int no1 = sc.nextInt();
-        System.out.println("enter no2 :");
-        int no2= sc.nextInt();
-        int sum = no1 +no2 ;
-        System.out.println("Answer is " + sum);
-        return sum;
+    public static int calcaddition(int a ,int b){
+        int add = a+b;
+        return add;
+
     }
-    public static int subtraction(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter no1");
-        int no1 = sc.nextInt();
-        System.out.println("enter no2 :");
-        int no2= sc.nextInt();
-        int sum = no1 - no2 ;
-        System.out.println("Answer is " + sum);
-        return sum;
+    public static int calcsubtract(int a ,int b){
+        int subtract = a-b;
+        return subtract;
+
     }
-    public static int multiplication(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter no1");
-        int no1 = sc.nextInt();
-        System.out.println("enter no2 :");
-        int no2= sc.nextInt();
-        int sum = no1 * no2 ;
-        System.out.println("Answer is " + sum);
-        return sum;
+    public static int calcmultiply(int a ,int b){
+        int multiply = a*b;
+        return multiply;
+
     }
-    public static int division(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter no1");
-        int no1 = sc.nextInt();
-        System.out.println("enter no2 :");
-        int no2= sc.nextInt();
-        int sum = no1 / no2 ;
-        System.out.println("Answer is " + sum);
-        return sum;
+    public static int calcdivide(int a ,int b){
+        int devide = a/b;
+        return devide;
+
     }
 }
-
